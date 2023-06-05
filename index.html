@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Teste Estagiário</title>
+</head>
+<body>
+    <form id="formularioUser">
+        <label for="nameUser">Nome: <input type="text" name="nameUser" id="nameUser"></label>
+        <label for="emailUser">Email: <input type="email" name="emailUser" id="emailUser"></label>
+        <label for="cepUser">CEP: <input type="number" name="cepUser" id="cepUser"></label>
+        <button onclick="addUser()">Adicionar Usuário</button>
+        <button onclick="clearLocalStorage()">Apagar Usuarios</button>
+    </form>
+    <p>Usuarios Cadastrados:</p>
+    <ul id="listUsers">
+    </ul>
+</body>
+</html>
