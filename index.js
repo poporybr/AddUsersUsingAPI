@@ -32,7 +32,9 @@ async function buscarCep(cep) {
       bairro: endereco.bairro,
       logradouro: endereco.logradouro
     };
-
+    if(resultado.cep === undefined){
+      return alert(`O CEP ${cep} não existe!`)
+    }
     return resultado;
   //captura o erro em caso de falha na comunicação entre servidores
   } catch (error) {
@@ -49,7 +51,7 @@ async function addUser(){
   let cepUser = document.getElementById('cepUser').value
     
   try {
-    //chama a função buscarCep para definir a variavel que recebe o objeto 'resultado' da linha 28 
+    //chama a função buscarCep para definir a variavel que recebe o objeto 'resultado'
       const enderecoUser = await buscarCep(cepUser);
 
       //usando os valores de resultado, cria um objeto usando usuario 
@@ -101,12 +103,12 @@ function showUsers() {
     const itemLista = document.createElement('li')
     itemLista.textContent = `Nome: ${user.nome}, Email: ${user.email}, CEP: ${user.cep}, Logradouro: ${user.logradouro}, Estado: ${user.estado}, Cidade: ${user.cidade}, Bairro: ${user.bairro}`
 
-    //adiciona o item criado dentro da lista capturada na linha 97
+    //adiciona o item criado dentro da lista capturada do html
     list.append(itemLista)
   });
 }
 
-//todas as funções garante que a tela seja recarregada para que a função showUsers execute a cada usuario adicionado ou removido, por isso a chamada da função na linha 110 
+//todas as funções garante que a tela seja recarregada para que a função showUsers execute a cada usuario adicionado ou removido, por isso a chamada da função 
 showUsers()
 
 //função para limpar o localStorage e recarregar a tela
