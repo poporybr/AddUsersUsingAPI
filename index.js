@@ -33,6 +33,7 @@ async function buscarCep(cep) {
       logradouro: endereco.logradouro
     };
     if(resultado.cep === undefined){
+      location.reload()
       return alert(`O CEP ${cep} não existe!`)
     }
     return resultado;
