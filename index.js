@@ -41,7 +41,7 @@ async function buscarCep(cep) {
 }
 
 
-
+//função para adicionar usuarios em localStorage
 async function addUser(){
   //variaveis recebem os valores dos inputs do html
   let nameUser = document.getElementById('nameUser').value
